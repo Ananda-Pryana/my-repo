@@ -60,11 +60,11 @@ public class TestDB
 		final StringBuilder sb = new StringBuilder();
 		final DataSource dataSource = getDataSource();
 
-		final String sql = "select string from test2";
+		final String sql = "select string from test";
 		try (	final Connection conn = dataSource.getConnection(); //
 				final ResultSet resultSet = conn.prepareCall(sql).executeQuery())
 		{
-			sb.append("contents of test table 2:<br>");
+			sb.append("contents of test table:<br>");
 			while (resultSet.next())
 			{
 				sb.append("&emsp;" + resultSet.getString(1) + "<br>");
